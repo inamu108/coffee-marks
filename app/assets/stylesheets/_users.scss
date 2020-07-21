@@ -1,3 +1,72 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main {
+  width: 100%;
+  margin-top: 90px;
+  .sign-area {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 100px 0 70px;
+    section {
+      padding: 30px 100px;
+      background: #fff;
+      .head02 {
+        &:after {
+          left: 30%;
+        }
+      }
+      .form {
+        margin-top: 80px;
+        .field {
+          width: 100%;
+          margin-top: 30px;
+          input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 4px;
+          }
+          .title {
+            margin-bottom: 15px;
+            .required {
+              margin-left: 10px;
+              padding: 5px 8px;
+              font-size: 11px;
+              color: #fff;
+              background: #ff6a14;
+              border-radius: 4px;
+            }
+          }
+          .error {
+            margin-top: 10px;
+            font-size: 14px;
+            color: red;
+          }
+          .name {
+            @include flex();
+            input {
+              &:nth-child(2) {
+                margin-left: 20px;
+              }
+            }
+          }
+        }
+        .actions {
+          width: 100%;
+          margin-top: 50px;
+          input {
+            width: 100%;
+            padding: 15px;
+            color: #fff;
+            border: 2px solid #575a5f;
+            border-radius: 4px;
+            background: #575a5f;
+            cursor: pointer;
+            &:hover {
+              opacity: .8;
+              transition-duration: .5s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
