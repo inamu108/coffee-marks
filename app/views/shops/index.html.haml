@@ -1,0 +1,81 @@
+= render "./layouts/header"
+%main.main
+  .main-visual
+  .main-area
+    %section
+      .head02
+        %h2
+          Coffee shops
+      .cafe-column
+        = link_to "#", class: "cafe-col" do
+          %figure
+            = image_tag 'logo.png'
+          .cafe-detail
+            .cafe-name
+              Grace
+            .cafe-evaluation
+              ★★★★★
+            .cafe-location
+              %p.prefecture
+                東京都
+              %p.station
+                西荻窪駅
+            .description
+              ケーキが美味しいのよ
+        = link_to "#", class: "cafe-col" do
+          %figure
+            = image_tag 'logo.png'
+          .cafe-detail
+            .cafe-name
+              Grace
+            .cafe-evaluation
+              ★★★
+            .cafe-location
+              %p.prefecture
+                東京都
+              %p.station
+                西荻窪
+            .description
+              ケーキが美味しいのよ
+        = link_to "#", class: "cafe-col" do
+          %figure
+            = image_tag 'logo.png'
+          .cafe-detail
+            .cafe-name
+              Grace
+            .cafe-evaluation
+              ★★★★★
+            .cafe-location
+              %p.prefecture
+                東京都
+              %p.station
+                西荻窪
+            .description
+              ケーキが美味しいのよ
+        = link_to "#", class: "cafe-col" do
+          %figure
+            = image_tag 'logo.png'
+          .cafe-detail
+            .cafe-name
+              Grace
+            .cafe-evaluation
+              ★★★
+            .cafe-location
+              %p.prefecture
+                東京都
+              %p.station
+                西荻窪
+            .description
+              ケーキが美味しいのよ
+      = link_to "#", class: "more" do
+        %p.point
+          %span.dot
+            …
+          %span.text
+            もっと見る
+  .main-area
+    %section
+      .head02
+        %h2
+          カフェ一覧
+= render "./layouts/footer"
