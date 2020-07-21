@@ -1,0 +1,62 @@
+= render "./layouts/header"
+%main.main
+  .post-area
+    %section
+      .head02
+        %h2
+          Cafe post
+      .form
+        = form_with local: true do |f|
+          .field
+            %p.title
+              image
+              %span.required
+                必須
+            .images
+              %p.form-image 最大3枚までアップロードできます
+              .clearfix
+                %ul#previews
+                  %li.input
+                    %label.upload-label
+                      .upload-label__text
+                        ドラッグアンドドロップ
+                        %br
+                        またはクリックしてファイルをアップロード
+                        .input-area
+                          = f.file_field :images
+          .field
+            %p.title
+              name
+              %span.required
+                必須
+            .name
+              = f.text_field :name, placeholder: "カフェの名前"
+          .field
+            %p.title
+              evaluation
+              %span.required
+                必須
+            .evaluation
+              = f.text_field :evaluation, placeholder: "★★★★★"
+          .field
+            %p.title
+              prefecture
+              %span.required
+                必須
+            .prefecture
+              -#= f.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name
+          .field
+            %p.title
+              station
+              %span.required
+                必須
+            .station
+              = f.text_field :station, placeholder: "例）渋谷駅"
+          .field
+            %p.title
+              description
+            .description
+              = f.text_area :description, placeholder: "例）ショートケーキがおすすめ。"
+          .actions
+            = f.submit "登録"
+= render "./layouts/footer"

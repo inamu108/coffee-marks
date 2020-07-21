@@ -7,7 +7,7 @@
       %ul
         - if user_signed_in?
           %li
-            = link_to "Cafe post", "#"
+            = link_to "Cafe post", new_shop_path
           %li
             = link_to "#{current_user.nickname}'s My page", user_path(current_user.id)
           %li
