@@ -2,16 +2,20 @@
   .header-area
     .logo
       %h1
-        = link_to image_tag("logo.png", alt: "coffee-marks")
+        = link_to image_tag("logo.png", alt: "coffee-marks"), root_path
     %nav.global-nav
       %ul
-        %li
-          = link_to "Coffee post", "#"
-        %li
-          = link_to "Log out", "#"
-        %li
-          = link_to "Sign up", "#"
-        %li
-          = link_to "Sign in", "#"
+        - if user_signed_in?
+          %li
+            = link_to "Cafe post", "#"
+          %li
+            = link_to "#{current_user.nickname}'s My page", user_path(current_user.id)
+          %li
+            = link_to "Log out", destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to "Sign up", new_user_registration_path
+          %li
+            = link_to "Sign in", new_user_session_path
         %li
           = link_to "Blog", "https://inamublog.com/", target: :_blank

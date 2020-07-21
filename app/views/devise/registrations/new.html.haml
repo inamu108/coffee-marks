@@ -1,21 +1,55 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+= render "./layouts/header"
+%main.main
+  .sign-area
+    %section
+      .head02
+        %h2
+          Sign up
+      .form
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          .field
+            %p.title
+              nickname
+              %span.required
+                必須
+            .email
+              = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: ""
+            .error
+              = resource.errors.full_messages_for(:nickname)[0]
+          .field
+            %p.title
+              email
+              %span.required
+                必須
+            .email
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example.com"
+            .error
+              = resource.errors.full_messages_for(:email)[0]
+          .field
+            %p.title
+              password
+              %span.required
+                必須
+            .password
+              = f.password_field :password, autocomplete: "new-password", placeholder: "7文字の英数字の組み合わせ"
+          .field
+            .password
+              = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう1度入力して下さい"
+            .error
+              = resource.errors.full_messages_for(:password)[0]
+          .field
+            %p.title
+              name
+              %span.required
+                必須
+            .name
+              = f.text_field :family_name, autofocus: true, autocomplete: "family_name", placeholder: "例）田中"
+              = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "例）太郎"
+            .error
+              = resource.errors.full_messages_for(:family_name)[0]
+            .error
+              = resource.errors.full_messages_for(:first_name)[0]
+          .actions
+            = f.submit "Sign up"
+        -# = render "devise/shared/links"
+= render "./layouts/footer"
