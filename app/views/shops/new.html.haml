@@ -6,7 +6,7 @@
         %h2
           Cafe post
       .form
-        = form_with local: true do |f|
+        = form_with model: @shop, local: true do |f|
           .field
             %p.title
               image
@@ -23,7 +23,7 @@
                         %br
                         またはクリックしてファイルをアップロード
                         .input-area
-                          = f.file_field :images
+                          = f.file_field :image
           .field
             %p.title
               name
@@ -44,7 +44,7 @@
               %span.required
                 必須
             .prefecture
-              -#= f.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name
+              -#= f.collection_select :prefecture_code, PrefectureCode.all, :id, :name
           .field
             %p.title
               station
@@ -58,5 +58,5 @@
             .description
               = f.text_area :description, placeholder: "例）ショートケーキがおすすめ。"
           .actions
-            = f.submit "登録"
+            = f.submit "Send"
 = render "./layouts/footer"

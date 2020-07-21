@@ -1,24 +1,51 @@
-# README
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false|
+|email|string|null false|
+|password|string|null: false|
+|nickname|string|null: false|
+|first_name|string|null: false|
+|family_name|string|null: false|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many: cafes
+- has_many: comments
+- has_many: favorites
 
-Things you may want to cover:
+## cafesテーブル
+|Column|Type|Option|
+|------|----|------|
+|id|string|null: false|
+|image|text|null: false|
+|name|string|null: false|
+|evaluation|float|null: false|
+|prefecture_code|integer|null: false|
+|station|string|null: false|
+|description|text|
 
-* Ruby version
+## Association
+- belongs_to :user
+- has_many :comments, dependent: :destroy
+- has_many :favorites
 
-* System dependencies
+## commentsテーブル
+|Column|Type|Option|
+|------|----|------|
+|comment|text|null: false|
+|user|references|null: false, foreign_key: true|
+|cafe|references|null: false foreign_key: true|
 
-* Configuration
+## Association
+- belongs_to :user
+- belongs_to :cafe
 
-* Database creation
+## favoritesテーブル
+|Column|Type|Option|
+|------|----|------|
+|user|references|null: false, foreign_key: true|
+|cafe|references|null: false, foreign_key: true|
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Association
+- belongs_to :user
+- belongs_to :cafe
