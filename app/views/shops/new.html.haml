@@ -44,7 +44,7 @@
               %span.required
                 必須
             .prefecture
-              -#= f.collection_select :prefecture_code, PrefectureCode.all, :id, :name
+              = f.collection_select :prefecture_code, Prefecture.all, :id, :name, include_blank: "---"
           .field
             %p.title
               station
