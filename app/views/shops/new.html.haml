@@ -9,21 +9,11 @@
         = form_with model: @shop, local: true do |f|
           .field
             %p.title
-              image
+              images
               %span.required
                 必須
             .images
-              %p.form-image 最大3枚までアップロードできます
-              .clearfix
-                %ul#previews
-                  %li.input
-                    %label.upload-label
-                      .upload-label__text
-                        ドラッグアンドドロップ
-                        %br
-                        またはクリックしてファイルをアップロード
-                        .input-area
-                          = f.file_field :image
+              = f.file_field :image
           .field
             %p.title
               name

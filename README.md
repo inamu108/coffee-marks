@@ -9,20 +9,21 @@
 |family_name|string|null: false|
 
 ### Association
-- has_many: cafes
+- has_many: shops
 - has_many: comments
 - has_many: favorites
 
-## cafesテーブル
+## shopsテーブル
 |Column|Type|Option|
 |------|----|------|
 |id|string|null: false|
-|image|text|null: false|
+|image|string|null: false|
 |name|string|null: false|
 |evaluation|float|null: false|
 |prefecture_code|integer|null: false|
 |station|string|null: false|
 |description|text|
+|user|references|null: false, foreign_key: true|
 
 ## Association
 - belongs_to :user
@@ -38,14 +39,14 @@
 
 ## Association
 - belongs_to :user
-- belongs_to :cafe
+- belongs_to :shop
 
 ## favoritesテーブル
 |Column|Type|Option|
 |------|----|------|
 |user|references|null: false, foreign_key: true|
-|cafe|references|null: false, foreign_key: true|
+|shop|references|null: false, foreign_key: true|
 
 ## Association
 - belongs_to :user
-- belongs_to :cafe
+- belongs_to :shop

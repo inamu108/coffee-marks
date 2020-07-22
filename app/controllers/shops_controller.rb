@@ -1,15 +1,19 @@
 class ShopsController < ApplicationController
   def index
+    # @shops = Shop.all
   end
 
   def new
-    @shop = Shop.new
+    if user_signed_in?
+      @shop = Shop.new
+    else
+      redirect_to new_user_session_path, info: "ログインして下さい"
+    end
   end
 
   def create
-    @shop = Shop.new(shop_params)
+    @shop = current_user.shops.new(shop_params)
     if @shop.save
-      redirect_to root_path
     else
       render :new
     end
@@ -18,6 +22,6 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:image, :name, :evaluation, :prefecture_code, :station, :description)
+    params.require(:shop).permit(:image, :name, :evaluation, :prefecture_code, :station, :description).merge(user_id: current_user.id)
   end
 end
