@@ -9,42 +9,42 @@
         = form_with model: @shop, local: true do |f|
           .field
             %p.title
-              images
+              お店や食べ物の画像
               %span.required
                 必須
             .images
               = f.file_field :image
           .field
             %p.title
-              name
+              お店の名前
               %span.required
                 必須
             .name
-              = f.text_field :name, placeholder: "カフェの名前"
+              = f.text_field :name, placeholder: "喫茶店の名前"
           .field
             %p.title
-              evaluation
+              評価
               %span.required
                 必須
             .evaluation
               = f.text_field :evaluation, placeholder: "★★★★★"
           .field
             %p.title
-              prefecture
+              都道府県
               %span.required
                 必須
             .prefecture
-              = f.collection_select :prefecture_code, Prefecture.all, :id, :name, include_blank: "---"
+              = f.collection_select :prefecture_code, Prefecture.all, :id, :name, prompt: "---"
           .field
             %p.title
-              station
+              最寄駅
               %span.required
                 必須
             .station
               = f.text_field :station, placeholder: "例）渋谷駅"
           .field
             %p.title
-              description
+              説明
             .description
               = f.text_area :description, placeholder: "例）ショートケーキがおすすめ。"
           .actions

@@ -1,6 +1,6 @@
 $main_color_font:rgba(0,0,0,0.87);
 $title_font: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-$text-font:'Noto Sans Japanese', sans-serif;
+$text-font:'Times New Roman', 'Noto Serif JP', serif;
 $layout-width-inner: 1260px;
 $main-background: #EDEDEA;
 
@@ -143,7 +143,8 @@ a:hover {
     background-size: cover;
   }
   .main-area {
-    max-width: 1260px;
+    // max-width: 1260px;
+    max-width: 940px;
     margin: 0 auto;
     padding: 100px 0 70px;
   }
@@ -157,46 +158,46 @@ a:hover {
         position: absolute;
         content: "";
         bottom: -15px;
-        left: 43%;
+        left: 40.5%;
         width: 180px;
         height: 1px;
         background: #333;
       }
     }
     .cafe-column {
-      margin-top: 70px;
+      margin-top: 25px;
       @include flex();
+      flex-wrap: wrap;
       .cafe-col {
-        width: calc((100% - 90px) / 4);
-        margin-left: 30px;
+        width: calc((100% - 90px) / 3);
+        margin-top: 45px;
+        margin-left: 45px;
         color: $main_color_font;
-        &:first-child {
+        &:nth-child(3n+1) {
           margin-left: 0;
         }
         figure {
-          width: 292.5px;
-          height: 292.5px;
+          width: 285px;
+          height: 176px;
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
         }
         .cafe-detail {
           padding: 20px 10px;
-          .cafe-name {
-            font-size: 18px;
-            font-weight: bold;
-          }
           .cafe-evaluation {
-            margin-top: 10px;
+            margin-left: 5px;
+            font-size: 13px;
             color: #ffaa00;
           }
-          .cafe-location {
-            @include flex();
+          .cafe-station {
             margin-top: 15px;
-            .station {
-              margin-left: 20px;
-            }
+            font-size: 13px;
           }
-          .description {
-            margin-top: 20px;
-          }
+          // .description {
+          //   margin-top: 20px;
+          // }
         }
       }
     }
