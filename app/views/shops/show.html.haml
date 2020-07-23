@@ -1,0 +1,25 @@
+= render "./layouts/header"
+%main.main
+  .list-area
+    %section
+      .head02
+        %h2
+          Coffee shop detail
+      .cafe-list
+        %figure
+          = image_tag @shop.image.url
+        .cafe-individual
+          .cafe-name
+            = @shop.name
+            %span.cafe-evaluation
+              ★★★★★
+              -# = @shop.evaluation
+          .cafe-station
+            = @shop.station
+            %span.cafe-move
+              = @shop.move
+              = @shop.time
+              分くらい
+          .description
+            = @shop.description
+= render "./layouts/footer"
