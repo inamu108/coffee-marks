@@ -365,6 +365,7 @@ a:hover {
 
 /* show
 ----------------------------- */
+
 .list-area {
   max-width: 840px;
   margin: 0 auto;
@@ -412,5 +413,37 @@ a:hover {
       margin-top: 25px;
       line-height: 1.8;
     }
+  }
+}
+
+/* list
+----------------------------- */
+
+.pagination {
+  @include flex();
+  justify-content: center;
+  margin-top: 50px;
+  span {
+    margin-left: 3px;
+    background: #ededed;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      display: block;
+      padding: 10px 14px 10px 14px;
+      color: $main_color_font;
+      &:hover {
+        background: #dcdcdc;
+        transition-duration: .6s;
+      }
+    }
+  }
+  .current {
+    padding: 10px 14px 10px 14px;
+    color: #fff;
+    background: #575a5f;
   }
 }
