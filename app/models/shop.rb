@@ -11,6 +11,8 @@ class Shop < ApplicationRecord
     validates :evaluation
     validates :prefecture_code
     validates :station
+    validates :move
+    validates :time
   end
 
 end

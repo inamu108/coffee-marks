@@ -9,7 +9,7 @@
         = form_with model: @shop, local: true do |f|
           .field
             %p.title
-              お店や食べ物の画像
+              お店や食べ物の画像（3枚まで）
               %span.required
                 必須
             .images
@@ -44,9 +44,19 @@
               = f.text_field :station, placeholder: "例）渋谷駅"
           .field
             %p.title
+              移動手段
+              %span.required
+                必須
+            .transportation
+              = f.select :move, [["--"],["徒歩"],["車"]]
+              %span で
+              = f.text_field :time, placeholder: "例）3"
+              %span 分くらい
+          .field
+            %p.title
               説明
             .description
-              = f.text_area :description, placeholder: "例）ショートケーキがおすすめ。"
+              = f.text_area :description, placeholder: "例）　お店の雰囲気がすごく良い。ショートケーキとミルクティーがおすすめ。"
           .actions
             = f.submit "Send"
 = render "./layouts/footer"

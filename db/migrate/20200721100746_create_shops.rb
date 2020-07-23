@@ -6,6 +6,8 @@ class CreateShops < ActiveRecord::Migration[6.0]
       t.float :evaluation, null: false
       t.integer :prefecture_code, null: false
       t.string :station, null: false
+      t.string :move, null: false
+      t.integer :time, null: false
       t.text :description
       t.references :user, null: false, foreign_key: true
       t.timestamps

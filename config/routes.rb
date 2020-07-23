@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   
   root to: 'shops#index'
 
-  resources :shops
+  resources :shops do
+    collection do
+      get 'list'
+    end
+  end
   resources :users, only: [:show]
 end

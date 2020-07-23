@@ -1,6 +1,5 @@
 = render "./layouts/header"
 %main.main
-  .main-visual
   .main-area
     %section
       .head02
@@ -27,15 +26,4 @@
                   分くらい
               -# .description
               -#   = shop.description
-      = link_to list_shops_path, class: "more" do
-        %p.point
-          %span.dot
-            …
-          %span.text
-            もっと見る
-  -# .main-area
-  -#   %section
-  -#     .head02
-  -#       %h2
-  -#         カフェ一覧
 = render "./layouts/footer"

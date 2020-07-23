@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_07_21_100746) do
     t.float "evaluation", null: false
     t.integer "prefecture_code", null: false
     t.string "station", null: false
+    t.string "move", null: false
+    t.integer "time", null: false
     t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

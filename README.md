@@ -22,6 +22,8 @@
 |evaluation|float|null: false|
 |prefecture_code|integer|null: false|
 |station|string|null: false|
+|move|string|null: false|
+|time|integer|null: false|
 |description|text|
 |user|references|null: false, foreign_key: true|
 

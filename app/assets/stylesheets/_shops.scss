@@ -194,6 +194,9 @@ a:hover {
           .cafe-station {
             margin-top: 15px;
             font-size: 13px;
+            .cafe-move {
+              margin-left: 13px;
+            }
           }
           // .description {
           //   margin-top: 20px;
@@ -304,11 +307,28 @@ a:hover {
           height: 120px;
           padding: 15px;
           border: 2px solid #eee;
+          line-height: 1.8;
         }
         select {
           width: 100%;
           padding: 15px;
           border: 2px solid #eee;
+        }
+        .transportation {
+          @include flex();
+          align-items: center;
+          select {
+            width:  36%;
+          }
+          input {
+            width: 36%;
+            margin-left: 10px;
+          }
+          span {
+            width: 14%;
+            margin-left: 5px;
+            font-size: 14px;
+          }
         }
       }
       .actions {
@@ -340,5 +360,57 @@ a:hover {
   text-align: center;
   p {
     margin-top: 25px;
+  }
+}
+
+/* show
+----------------------------- */
+.list-area {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 100px 0 70px;
+  section {
+    .head02 {
+      &:after {
+        left: 39%;
+      }
+    }
+  }
+}
+.cafe-list {
+  padding: 0 50px;
+  @include flex();
+  margin-top: 70px;
+  figure {
+    width: 400px;
+    height: 247px;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .cafe-individual {
+    width: 440px;
+    padding: 0 30px 20px;
+    .cafe-name {
+      font-size: 22px;
+      .cafe-evaluation {
+        margin-left: 10px;
+      }
+    }
+    .cafe-evaluation {
+      font-size: 15px;
+      color: #ffaa00;
+    }
+    .cafe-station {
+      margin-top: 15px;
+    }
+    .cafe-move {
+      margin-left: 13px;
+    }
+    .description {
+      margin-top: 25px;
+      line-height: 1.8;
+    }
   }
 }
