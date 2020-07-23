@@ -25,7 +25,8 @@ class ShopsController < ApplicationController
   end
 
   def list
-    @shops = Shop.includes(:user).order('created_at DESC')
+    # @shops = Shop.includes(:user).order('created_at DESC')
+    @shops = Shop.includes(:user).order('created_at DESC').page(params[:page]).per(9)
   end
 
   private
