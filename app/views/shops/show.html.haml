@@ -26,5 +26,5 @@
             %p.edit-btn
               = link_to "編集", edit_shop_path
             %p.destroy-btn
-              = link_to "削除", edit_shop_path
+              = link_to "削除", shop_path(@shop.id), method: :delete, data: {confirm: "本当に削除しますか？"}
 = render "./layouts/footer"

@@ -1,0 +1,15 @@
+= render "./layouts/header"
+%main.main
+  .post-area
+    %section
+      .head02
+        %h2
+          Cafe deleted
+      .destroy
+        %p
+          ありがとうございます。
+        %p
+          投稿を削除しました。
+        %p
+          = link_to "トップへ戻る", root_path
+= render "./layouts/footer"

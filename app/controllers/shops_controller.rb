@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :set_shop, only: [:show, :edit, :update]
+  before_action :set_shop, only: [:show, :edit, :update, :destroy]
 
   def index
     @shops = Shop.includes(:user).limit(6).order('created_at DESC')
@@ -33,6 +33,10 @@ class ShopsController < ApplicationController
 
   def update
     @shop.update(shop_params)
+  end
+
+  def destroy
+    @shop.destroy
   end
 
   private
