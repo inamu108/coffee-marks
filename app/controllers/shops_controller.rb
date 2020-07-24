@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :set_shop, only: [:show]
+  before_action :set_shop, only: [:show, :edit, :update]
 
   def index
     @shops = Shop.includes(:user).limit(6).order('created_at DESC')
@@ -25,8 +25,14 @@ class ShopsController < ApplicationController
   end
 
   def list
-    # @shops = Shop.includes(:user).order('created_at DESC')
     @shops = Shop.includes(:user).order('created_at DESC').page(params[:page]).per(9)
+  end
+
+  def edit
+  end
+
+  def update
+    @shop.update(shop_params)
   end
 
   private

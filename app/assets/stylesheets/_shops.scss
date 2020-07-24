@@ -352,17 +352,6 @@ a:hover {
   }
 }
 
-/* create
------------------------------ */
-
-.create {
-  padding: 30px;
-  text-align: center;
-  p {
-    margin-top: 25px;
-  }
-}
-
 /* show
 ----------------------------- */
 
@@ -445,5 +434,47 @@ a:hover {
     padding: 10px 14px 10px 14px;
     color: #fff;
     background: #575a5f;
+  }
+}
+
+/* edit
+----------------------------- */
+
+.btn {
+  @include flex();
+  margin-top: 30px;
+  a {
+    display: block;
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 13px;
+    color: $main_color_font;
+  }
+  .destroy-btn {
+    margin-left: 10px;
+  }
+}
+
+/* create,update
+----------------------------- */
+
+.create, .update {
+  padding: 30px;
+  text-align: center;
+  p {
+    margin-top: 25px;
+    a {
+      display: block;
+      width: 180px;
+      margin: 0 auto;
+      padding: 12px 15px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+      font-size: 13px;
+      color: $main_color_font;
+    }
   }
 }
