@@ -186,10 +186,15 @@ a:hover {
         }
         .cafe-detail {
           padding: 20px 10px;
-          .cafe-evaluation {
-            margin-left: 5px;
-            font-size: 13px;
-            color: #ffaa00;
+          .cafe-name {
+            @include flex();
+            .cafe-evaluation {
+              @include flex();
+              margin-left: 15px;
+              img {
+                width: 14px;
+              }
+            }
           }
           .cafe-station {
             margin-top: 15px;
@@ -315,6 +320,11 @@ a:hover {
           border: 2px solid #eee;
           background: #fff;
         }
+        #star {
+          img {
+            width: 26px;
+          }
+        }
         .transportation {
           @include flex();
           align-items: center;
@@ -383,14 +393,14 @@ a:hover {
     width: 440px;
     padding: 0 30px 20px;
     .cafe-name {
-      font-size: 22px;
+      @include flex();
       .cafe-evaluation {
-        margin-left: 10px;
+        @include flex();
+        margin-left: 15px;
+        img {
+          width: 14px;
+        }
       }
-    }
-    .cafe-evaluation {
-      font-size: 15px;
-      color: #ffaa00;
     }
     .cafe-station {
       margin-top: 15px;

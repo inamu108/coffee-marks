@@ -9,11 +9,15 @@ class Shop < ApplicationRecord
   with_options presence: true do
     validates :image
     validates :name
-    validates :evaluation
     validates :prefecture_code
     validates :station
     validates :move
     validates :time
   end
+
+  validates :evaluation, numericality: {
+    less_than_or_equal_to: 5,
+    greater_than_or_equal_to: 1
+  }, presence: true
 
 end

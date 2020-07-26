@@ -15,18 +15,23 @@
             -#   = shop.prefecture_code
             .cafe-detail
               .cafe-name
-                = shop.name
-                %span.cafe-evaluation
-                  ★★★★★
-                -# = shop.evaluation
+                %p= shop.name
+                %p.cafe-evaluation{ id: "star-evaluation-#{shop.id}" }
+                  :javascript
+                    $('#star-evaluation-#{shop.id}').raty({
+                      starOff: "#{asset_path('star-off.png')}",
+                      starOn: "#{asset_path('star-on.png')}",
+                      starHalf: "#{asset_path('star-half.png')}",
+                      half: true,
+                      readOnly: true,
+                      score: "#{shop.evaluation}",
+                    });
               .cafe-station
                 = shop.station
                 %span.cafe-move
                   = shop.move
                   = shop.time
                   分くらい
-              -# .description
-              -#   = shop.description
       = link_to list_shops_path, class: "more" do
         %p.point
           %span.dot
