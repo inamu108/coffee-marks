@@ -1,3 +1,3 @@
 //= require jquery
 //= require rails-ujs
-//= require evaluation
+//= require_tree .
