@@ -35,9 +35,9 @@
 ## commentsテーブル
 |Column|Type|Option|
 |------|----|------|
-|comment|text|null: false|
+|text|text|null: false|
 |user|references|null: false, foreign_key: true|
-|cafe|references|null: false foreign_key: true|
+|shop|references|null: false foreign_key: true|
 
 ## Association
 - belongs_to :user

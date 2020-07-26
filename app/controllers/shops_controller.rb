@@ -22,6 +22,8 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @shop.comments.includes(:user)
   end
 
   def list

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'list'
     end
+    resources :comments, only: [:create]
   end
   resources :users, only: [:show, :edit, :update]
 end

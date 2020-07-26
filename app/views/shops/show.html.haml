@@ -24,7 +24,26 @@
             = @shop.description
           .btn
             %p.edit-btn
-              = link_to "編集", edit_shop_path
+              = link_to "edit", edit_shop_path
             %p.destroy-btn
-              = link_to "削除", shop_path(@shop.id), method: :delete, data: {confirm: "本当に削除しますか？"}
+              = link_to "delete", shop_path(@shop.id), method: :delete, data: {confirm: "本当に削除しますか？"}
+      .comment-submit
+        - if current_user
+          = form_with(model: [@shop, @comment], local: true) do |form|
+            = form.text_area :text, placeholder: "【コメント】  実際に行ってみましたが、本当にコーヒーが美味しかったです。また行きたいです。", rows: "2"
+            = form.submit "comment"
+        - else
+          %p.must
+            ※※ コメントの投稿には新規登録/ログインが必要です ※※
+      .comment-show
+        %p.title
+          コメント一覧
+        - if @comments
+          - @comments.each do |comment|
+            -# = link_to comment.user.nickname, "/users/#{comment.user_id}"
+            .comment-box
+              %p.username
+                = comment.user.nickname
+              %p.text
+                = comment.text
 = render "./layouts/footer"
