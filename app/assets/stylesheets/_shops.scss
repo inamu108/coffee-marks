@@ -313,6 +313,7 @@ a:hover {
           width: 100%;
           padding: 15px;
           border: 2px solid #eee;
+          background: #fff;
         }
         .transportation {
           @include flex();
@@ -358,7 +359,7 @@ a:hover {
 .list-area {
   max-width: 840px;
   margin: 0 auto;
-  padding: 100px 0 70px;
+  padding: 40px 0 70px;
   section {
     .head02 {
       &:after {
@@ -368,7 +369,6 @@ a:hover {
   }
 }
 .cafe-list {
-  padding: 0 50px;
   @include flex();
   margin-top: 70px;
   figure {
