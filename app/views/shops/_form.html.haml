@@ -19,8 +19,16 @@
         評価
         %span.required
           必須
-      .evaluation
-        = f.text_field :evaluation, placeholder: "★★★★★"
+      .evaluation{ id: :star }
+        = f.hidden_field :evaluation, id: :review_star
+        :javascript
+          $('#star').raty({
+            starOff: "#{asset_path('star-off.png')}",
+            starOn: "#{asset_path('star-on.png')}",
+            starHalf: "#{asset_path('star-half.png')}",
+            scoreName: 'shop[evaluation]',
+            half: true,
+          });
     .field
       %p.title
         都道府県
