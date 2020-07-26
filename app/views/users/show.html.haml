@@ -4,5 +4,7 @@
     %section
       .head02
         %h2
-          My page
+          = @user.nickname
+      = link_to "ユーザー情報編集", edit_user_path(current_user)
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
 = render "./layouts/footer"
