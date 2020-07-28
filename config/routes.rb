@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :shops do
     collection do
       get 'list'
+      get 'search'
     end
     resources :comments, only: [:create]
   end
