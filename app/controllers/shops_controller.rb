@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, except: [:index, :search]
 
   def index
     @shops = Shop.includes(:user).limit(6).order('created_at DESC')
@@ -30,6 +31,10 @@ class ShopsController < ApplicationController
     @shops = Shop.includes(:user).order('created_at DESC').page(params[:page]).per(9)
   end
 
+  def search
+    @shops = Shop.search(params[:keyword]).order('created_at DESC').page(params[:page]).per(9)
+  end
+
   def edit
   end
 
@@ -52,4 +57,11 @@ class ShopsController < ApplicationController
   def set_shop
     @shop = Shop.find(params[:id])
   end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
+
 end

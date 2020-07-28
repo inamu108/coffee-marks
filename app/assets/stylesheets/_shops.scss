@@ -110,6 +110,31 @@ a:hover {
             }
           }
         }
+        .search {
+          margin-left: 20px;
+          @include flex();
+          align-items: center;
+          .search-form {
+            .search-input {
+              width: 220px;
+              padding: 10px 15px;
+              border: 2px solid #ddd;
+              border-radius: 4px;
+            }
+            .search-btn {
+              padding: 7px 12px;
+              background: #575a5f;
+              border: 2px solid #ddd;
+              border-radius: 4px;
+              color: #fff;
+              cursor: pointer;
+              &:hover {
+                opacity: .8;
+                transition-duration: .5s;
+              }
+            }
+          }
+        }
       }
     }
   }

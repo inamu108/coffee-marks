@@ -6,32 +6,7 @@
       .head02
         %h2
           Coffee shops
-      .cafe-column
-        - @shops.each do |shop|
-          = link_to shop_path(shop.id), class: "cafe-col" do
-            %figure
-              = image_tag shop.image.url
-            -# %p.prefecture
-            -#   = shop.prefecture_code
-            .cafe-detail
-              .cafe-name
-                %p= shop.name
-                %p.cafe-evaluation{ id: "star-evaluation-#{shop.id}" }
-                  :javascript
-                    $('#star-evaluation-#{shop.id}').raty({
-                      starOff: "#{asset_path('star-off.png')}",
-                      starOn: "#{asset_path('star-on.png')}",
-                      starHalf: "#{asset_path('star-half.png')}",
-                      half: true,
-                      readOnly: true,
-                      score: "#{shop.evaluation}",
-                    });
-              .cafe-station
-                = shop.station
-                %span.cafe-move
-                  = shop.move
-                  = shop.time
-                  分くらい
+      = render "shop"
       = link_to list_shops_path, class: "more" do
         %p.point
           %span.dot
