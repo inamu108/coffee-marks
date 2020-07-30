@@ -4,12 +4,14 @@
 アプリ名は、机に残ったコーヒーの跡を見て決めました。
 
 ## アプリケーションの機能一覧
-記事投稿機能（星の評価機能、写真投稿機能）
+記事投稿機能（星の評価機能、写真投稿）  
 投稿編集機能  
 新規登録・ログイン機能  
 ユーザー情報編集  
 ページネーション機能  
-コメント機能
+コメント機能(非同期通信)  
+サイト内検索機能  
+いいね機能
 
 ## 使用技術(開発環境)
 Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
@@ -20,10 +22,7 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
 このアプリを使用すれば、ユーザーが投稿した喫茶店やカフェを5段階の星の評価、良かったことなどの説明文を見ることで分かりやすく、探すことができます。
 また、投稿にコメント機能が付いているので実際に行ってみた感想もコメントすることができます。
 
-## 今後の実装予定の内容
-・サイト内検索  
-・お気に入り機能  
-・いいね機能  
+## 今後の実装予定の内容  
 ・通知機能  
 
 
@@ -40,7 +39,7 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
 ### Association
 - has_many: shops
 - has_many: comments
-- has_many: favorites
+- has_many: likes
 
 ## shopsテーブル
 |Column|Type|Option|
@@ -59,7 +58,7 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
 ## Association
 - belongs_to :user
 - has_many :comments, dependent: :destroy
-- has_many :favorites
+- has_many :likes
 
 ## commentsテーブル
 |Column|Type|Option|
@@ -72,7 +71,7 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
 - belongs_to :user
 - belongs_to :shop
 
-## favoritesテーブル
+## likesテーブル
 |Column|Type|Option|
 |------|----|------|
 |user|references|null: false, foreign_key: true|

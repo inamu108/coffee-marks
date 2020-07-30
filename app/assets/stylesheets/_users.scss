@@ -4,13 +4,13 @@
   .sign-area {
     max-width: 650px;
     margin: 0 auto;
-    padding: 100px 0 70px;
+    padding: 30px 0 70px;
     section {
       padding: 30px 100px;
       background: #fff;
       .head02 {
         &:after {
-          left: 30%;
+          left: 20%;
         }
       }
       .form {
@@ -63,6 +63,129 @@
             &:hover {
               opacity: .8;
               transition-duration: .5s;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mypage-area {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 60px 0 70px;
+    section {
+      .head02 {
+        &:after {
+          left: 38%;
+        }
+      }
+      .my-column {
+        margin-top: 70px;
+        .menu {
+          @include flex();
+          width: 100%;
+          list-style: none;
+          li {
+            width: 50%;
+            text-align: center;
+            a{
+              display: block;
+              padding: 20px 15px;
+              background: #b3b3b3;
+              color: #fff;
+            }
+          }
+          .like-tab {
+            a {
+              border-radius: 4px 0 0 4px;
+            }
+          }
+          .edit-tab {
+            a {
+              border-radius: 0 4px 4px 0;
+              border-left: 1px solid #fff;
+            }
+          }
+          .active {
+            a {
+              background: #575a5f;
+            }
+          }
+        }
+        .contents {
+          margin-top: 30px;
+          list-style: none;
+          li {
+            display: none;
+          }
+          .show {
+            display: block;
+          }
+          .edit {
+            padding-top: 45px;
+            text-align: center;
+            a {
+              display: block;
+              width: 180px;
+              margin: 0 auto;
+              padding: 12px 15px;
+              border: 2px solid #ddd;
+              border-radius: 4px;
+              background: #fff;
+              font-size: 13px;
+              color: $main_color_font;
+            }
+          }
+          .my-like {
+            margin-top: 25px;
+            @include flex();
+            flex-wrap: wrap;
+            .my-like-col {
+              position: relative;
+              width: calc((100% - 60px) / 4);
+              margin-top: 45px;
+              margin-left: 20px;
+              &:nth-child(4n+1) {
+                margin-left: 0;
+              }
+              a {
+                display: block;
+                figure {
+                  width: 220px;
+                  height: 136px;
+                  img {
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .like-detail {
+                  height: 100px;
+                  padding: 20px 10px;
+                  background: #fff;
+                  color: $main_color_font;
+                  .like-name {
+                    @include flex();
+                    .name {
+                      font-size: 15px;
+                    }
+                    .like-evaluation {
+                      @include flex();
+                      margin-left: 15px;
+                      img {
+                        width: 14px;
+                        height: 14px;
+                      }
+                    }
+                  }
+                  .like-station {
+                    margin-top: 15px;
+                    font-size: 13px;
+                    .like-move {
+                      margin-left: 13px;
+                    }
+                  }
+                }
+              }
             }
           }
         }

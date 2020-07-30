@@ -1,10 +1,44 @@
 = render "./layouts/header"
 %main.main
-  .main-area
+  .mypage-area
     %section
       .head02
         %h2
-          = @user.nickname
-      = link_to "ユーザー情報編集", edit_user_path(current_user)
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
+          My page
+      .my-column
+        %ul.menu
+          %li.menu-item.active.like-tab
+            = link_to "いいね一覧", '#'
+          %li.menu-item.edit-tab
+            = link_to "ユーザー情報編集", '#'
+        %ul.contents
+          %li.content.show
+            .my-like
+              - current_user.like_shops.each do |shop|
+                .my-like-col
+                  = link_to shop_path(shop.id) do
+                    %figure
+                      = image_tag shop.image.url
+                    .like-detail
+                      .like-name
+                        %p.name
+                          = shop.name
+                        %p.like-evaluation{ id: "star-evaluation-#{shop.id}" }
+                          :javascript
+                            $('#star-evaluation-#{shop.id}').raty({
+                              starOff: "#{asset_path('star-off.png')}",
+                              starOn: "#{asset_path('star-on.png')}",
+                              starHalf: "#{asset_path('star-half.png')}",
+                              half: true,
+                              readOnly: true,
+                              score: "#{shop.evaluation}",
+                            });
+                      .like-station
+                        = shop.station
+                        %span.like-move
+                          = shop.move
+                          = shop.time
+                          分くらい
+          %li.content.edit
+            = link_to "ユーザー情報編集", edit_user_path(current_user)
 = render "./layouts/footer"

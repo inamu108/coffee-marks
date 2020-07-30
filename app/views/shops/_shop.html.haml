@@ -1,26 +1,36 @@
 .cafe-column
   - @shops.each do |shop|
-    = link_to shop_path(shop.id), class: "cafe-col" do
-      %figure
-        = image_tag shop.image.url
-      -# %p.prefecture
-      -#   = shop.prefecture_code
-      .cafe-detail
-        .cafe-name
-          %p= shop.name
-          %p.cafe-evaluation{ id: "star-evaluation-#{shop.id}" }
-            :javascript
-              $('#star-evaluation-#{shop.id}').raty({
-                starOff: "#{asset_path('star-off.png')}",
-                starOn: "#{asset_path('star-on.png')}",
-                starHalf: "#{asset_path('star-half.png')}",
-                half: true,
-                readOnly: true,
-                score: "#{shop.evaluation}",
-              });
-        .cafe-station
-          = shop.station
-          %span.cafe-move
-            = shop.move
-            = shop.time
-            分くらい
+    .cafe-col
+      = link_to shop_path(shop.id) do
+        %figure
+          = image_tag shop.image.url
+        -# %p.prefecture
+        -#   = shop.prefecture_code
+        .cafe-detail
+          .cafe-name
+            %p= shop.name
+            %p.cafe-evaluation{ id: "star-evaluation-#{shop.id}" }
+              :javascript
+                $('#star-evaluation-#{shop.id}').raty({
+                  starOff: "#{asset_path('star-off.png')}",
+                  starOn: "#{asset_path('star-on.png')}",
+                  starHalf: "#{asset_path('star-half.png')}",
+                  half: true,
+                  readOnly: true,
+                  score: "#{shop.evaluation}",
+                });
+          .cafe-station
+            = shop.station
+            %span.cafe-move
+              = shop.move
+              = shop.time
+              分くらい
+      .like
+        - if !shop.like_users.include?(current_user)
+          = link_to shop_likes_path(shop_id: shop.id), method: :post do
+            %i.fa-lg.fas.fa-heart.not-like
+        - else
+          = link_to shop_likes_path(shop_id: shop.id), method: :delete do
+            %i.fa-lg.fas.fa-heart.liked
+        %p.count
+          = shop.like_users.count
