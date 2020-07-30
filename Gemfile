@@ -68,3 +68,5 @@ gem 'mini_magick'
 gem 'kaminari'
 
 gem 'jquery-rails'
+
+gem "font-awesome-sass"

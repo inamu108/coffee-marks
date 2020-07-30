@@ -168,10 +168,9 @@ a:hover {
     background-size: cover;
   }
   .main-area {
-    // max-width: 1260px;
     max-width: 940px;
     margin: 0 auto;
-    padding: 100px 0 70px;
+    padding: 30px 0 70px;
   }
   section {
     .head02 {
@@ -194,43 +193,53 @@ a:hover {
       @include flex();
       flex-wrap: wrap;
       .cafe-col {
+        position: relative;
         width: calc((100% - 90px) / 3);
         margin-top: 45px;
         margin-left: 45px;
-        color: $main_color_font;
         &:nth-child(3n+1) {
           margin-left: 0;
         }
-        figure {
-          width: 285px;
-          height: 176px;
-          img {
-            height: 100%;
-            object-fit: cover;
+        a {
+          display: block;
+          figure {
+            width: 285px;
+            height: 176px;
+            img {
+              height: 100%;
+              object-fit: cover;
+            }
           }
-        }
-        .cafe-detail {
-          padding: 20px 10px;
-          .cafe-name {
-            @include flex();
-            .cafe-evaluation {
+          .cafe-detail {
+            padding: 20px 10px;
+            color: $main_color_font;
+            .cafe-name {
               @include flex();
-              margin-left: 15px;
-              img {
-                width: 14px;
+              .cafe-evaluation {
+                @include flex();
+                margin-left: 15px;
+                img {
+                  width: 14px;
+                }
+              }
+            }
+            .cafe-station {
+              margin-top: 15px;
+              font-size: 13px;
+              .cafe-move {
+                margin-left: 13px;
               }
             }
           }
-          .cafe-station {
-            margin-top: 15px;
-            font-size: 13px;
-            .cafe-move {
-              margin-left: 13px;
-            }
+        }
+        .like {
+          position: absolute;
+          content: "";
+          top: 0;
+          right: 0;
+          a {
+            padding: 7px;
           }
-          // .description {
-          //   margin-top: 20px;
-          // }
         }
       }
     }
@@ -288,7 +297,7 @@ a:hover {
 .post-area {
   max-width: 650px;
   margin: 0 auto;
-  padding: 100px 0 70px;
+  padding: 30px 0 70px;
   section {
     padding: 30px 100px;
     background: #fff;

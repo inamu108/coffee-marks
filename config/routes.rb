@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       get 'list'
       get 'search'
     end
+    # resources :likes, only: [:create, :destroy]
+    post 'add' => 'likes#create'
+    delete '/add' => 'likes#destroy'
     resources :comments, only: [:create]
   end
   resources :users, only: [:show, :edit, :update]

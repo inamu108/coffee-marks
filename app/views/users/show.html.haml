@@ -1,10 +1,19 @@
 = render "./layouts/header"
 %main.main
-  .main-area
+  .mypage-area
     %section
       .head02
         %h2
-          = @user.nickname
-      = link_to "ユーザー情報編集", edit_user_path(current_user)
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
+          My page
+      .my-column
+        %ul.menu
+          %li.menu-item.active.like-tab
+            = link_to "いいね一覧", '#'
+          %li.menu-item.edit-tab
+            = link_to "ユーザー情報編集", '#'
+        %ul.contents
+          %li.content.show
+            いいね一覧
+          %li.content.edit
+            = link_to "ユーザー情報編集", edit_user_path(current_user)
 = render "./layouts/footer"
