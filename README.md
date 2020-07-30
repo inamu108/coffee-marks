@@ -10,7 +10,8 @@
 ユーザー情報編集  
 ページネーション機能  
 コメント機能(非同期通信)  
-サイト内検索機能
+サイト内検索機能  
+いいね機能
 
 ## 使用技術(開発環境)
 Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
@@ -22,7 +23,6 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
 また、投稿にコメント機能が付いているので実際に行ってみた感想もコメントすることができます。
 
 ## 今後の実装予定の内容  
-・いいね機能  
 ・通知機能  
 
 

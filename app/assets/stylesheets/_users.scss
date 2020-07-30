@@ -10,7 +10,7 @@
       background: #fff;
       .head02 {
         &:after {
-          left: 30%;
+          left: 20%;
         }
       }
       .form {
@@ -72,9 +72,8 @@
   .mypage-area {
     max-width: 940px;
     margin: 0 auto;
-    padding: 30px 0 70px;
+    padding: 60px 0 70px;
     section {
-      padding: 30px 100px;
       .head02 {
         &:after {
           left: 38%;
@@ -123,7 +122,7 @@
             display: block;
           }
           .edit {
-            padding: 30px;
+            padding-top: 45px;
             text-align: center;
             a {
               display: block;
@@ -135,6 +134,58 @@
               background: #fff;
               font-size: 13px;
               color: $main_color_font;
+            }
+          }
+          .my-like {
+            margin-top: 25px;
+            @include flex();
+            flex-wrap: wrap;
+            .my-like-col {
+              position: relative;
+              width: calc((100% - 60px) / 4);
+              margin-top: 45px;
+              margin-left: 20px;
+              &:nth-child(4n+1) {
+                margin-left: 0;
+              }
+              a {
+                display: block;
+                figure {
+                  width: 220px;
+                  height: 136px;
+                  img {
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .like-detail {
+                  height: 100px;
+                  padding: 20px 10px;
+                  background: #fff;
+                  color: $main_color_font;
+                  .like-name {
+                    @include flex();
+                    .name {
+                      font-size: 15px;
+                    }
+                    .like-evaluation {
+                      @include flex();
+                      margin-left: 15px;
+                      img {
+                        width: 14px;
+                        height: 14px;
+                      }
+                    }
+                  }
+                  .like-station {
+                    margin-top: 15px;
+                    font-size: 13px;
+                    .like-move {
+                      margin-left: 13px;
+                    }
+                  }
+                }
+              }
             }
           }
         }

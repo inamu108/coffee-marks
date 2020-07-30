@@ -25,10 +25,12 @@
               = shop.move
               = shop.time
               分くらい
-      .like{ id: "like-btn-#{shop.id}" }
-        - if shop.liked_by?(current_user)
-          = link_to(shop_add_path(shop), method: :delete, remote: true, id: :"like-button-#{shop.id}") do
-            %i.fa-lg.fas.fa-heart.icon-btn.liked
+      .like
+        - if !shop.like_users.include?(current_user)
+          = link_to shop_likes_path(shop_id: shop.id), method: :post do
+            %i.fa-lg.fas.fa-heart.not-like
         - else
-          = link_to(shop_add_path(shop), method: :post, remote: true, id: :"like-button-#{shop.id}") do
-            %i.fa-lg.fas.fa-heart.icon-btn.not-like
+          = link_to shop_likes_path(shop_id: shop.id), method: :delete do
+            %i.fa-lg.fas.fa-heart.liked
+        %p.count
+          = shop.like_users.count

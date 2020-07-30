@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :shops
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :like_shops, through: :likes, source: :shop
+  has_many :like_shops, through: :likes, source: 'shop'
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
