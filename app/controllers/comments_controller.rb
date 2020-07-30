@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(comment_params)
+    @comment = Comment.create(comment_params)
+    respond_to do |format|
+      format.html { redirect_to shops_path(params[:shop_id])  }
+      format.json
+    end
   end
 
   private
