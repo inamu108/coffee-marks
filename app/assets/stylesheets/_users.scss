@@ -76,7 +76,26 @@
     section {
       .head02 {
         &:after {
-          left: 38%;
+          left: 35%;
+        }
+      }
+      .follow-form {
+        margin-top: -12px;
+        .move {
+          display: block;
+          padding: 7px;
+          border: 2px solid #ddd;
+          background: #fff;
+          color: $main_color_font;
+          cursor: pointer;
+        }
+        .remove {
+          display: block;
+          padding: 7px;
+          border: 2px solid #ddd;
+          background: #575a5f;
+          color: #fff;
+          cursor: pointer;
         }
       }
       .my-column {
@@ -86,7 +105,7 @@
           width: 100%;
           list-style: none;
           li {
-            width: 50%;
+            width: 25%;
             text-align: center;
             a{
               display: block;
@@ -122,7 +141,7 @@
             display: block;
           }
           .edit {
-            padding-top: 45px;
+            padding-top: 25px;
             text-align: center;
             a {
               display: block;
@@ -137,13 +156,12 @@
             }
           }
           .my-like {
-            margin-top: 25px;
             @include flex();
             flex-wrap: wrap;
             .my-like-col {
               position: relative;
               width: calc((100% - 60px) / 4);
-              margin-top: 45px;
+              margin-top: 25px;
               margin-left: 20px;
               &:nth-child(4n+1) {
                 margin-left: 0;
@@ -184,6 +202,29 @@
                       margin-left: 13px;
                     }
                   }
+                }
+              }
+            }
+          }
+          .following, .follower {
+            .lists {
+              padding-top: 25px;
+              .list {
+                position: relative;
+                padding: 15px 15px 15px 25px;
+                border: 2px solid #ddd;
+                background: #fff;
+                &:before {
+                  position: absolute;
+                  content: "";
+                  width: 4px;
+                  height: 4px;
+                  background: #333;
+                  top: 48%;
+                  left: 11px;
+                }
+                &:nth-child(n+2) {
+                  margin-top: 1px;
                 }
               }
             }

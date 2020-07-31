@@ -9,9 +9,10 @@
 新規登録・ログイン機能  
 ユーザー情報編集  
 ページネーション機能  
-コメント機能(非同期通信)  
+コメント機能  
 サイト内検索機能  
-いいね機能
+いいね機能  
+フォロー機能  
 
 ## 使用技術(開発環境)
 Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
@@ -40,6 +41,8 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
 - has_many: shops
 - has_many: comments
 - has_many: likes
+- has_many: following_relationships, foreign_key: "follower_id", class_name: "Relationship"
+- has_many: follower_relationships, foreign_key: "following_id", class_name: "Relationship"
 
 ## shopsテーブル
 |Column|Type|Option|
@@ -80,3 +83,13 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
 ## Association
 - belongs_to :user
 - belongs_to :shop
+
+## relationshipsテーブル
+|Column|Type|Option|
+|------|----|------|
+|follower|references|null: false, foreign_key: { to_table: :users }|
+|following|references|null: false, foreign_key: { to_table: :users }|
+
+## Association
+- belongs_to :follower, class_name: "User"
+- belongs_to :following, class_name: "User"
