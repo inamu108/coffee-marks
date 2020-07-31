@@ -29,11 +29,25 @@
               分くらい
           .description
             = @shop.description
-          .btn
-            %p.edit-btn
-              = link_to "edit", edit_shop_path
-            %p.destroy-btn
-              = link_to "delete", shop_path(@shop.id), method: :delete, data: {confirm: "本当に削除しますか？"}
+          .post-name
+            - if user_signed_in? && @shop.user.nickname == current_user.nickname
+              = link_to mypage_user_path(current_user.id) do
+                %span.post
+                  投稿者
+                %span.name
+                  = @shop.user.nickname
+            - else
+              = link_to user_path(@shop.user_id) do
+                %span
+                  投稿者
+                %span.name
+                  = @shop.user.nickname
+          - if user_signed_in? && current_user.id == @shop.user_id
+            .btn
+              %p.edit-btn
+                = link_to "edit", edit_shop_path
+              %p.destroy-btn
+                = link_to "delete", shop_path(@shop.id), method: :delete, data: {confirm: "本当に削除しますか？"}
       .comment-submit
         - if current_user
           = form_with(model: [@shop, @comment], local: true, id: "new-comment") do |form|

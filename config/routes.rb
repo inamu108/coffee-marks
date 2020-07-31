@@ -12,5 +12,14 @@ Rails.application.routes.draw do
     delete '/likes', to: 'likes#destroy'
     resources :comments, only: [:create]
   end
-  resources :users, only: [:show, :edit, :update]
+  
+  resources :users, only: [:show, :edit, :update] do
+    member do
+      get :following, :followers
+      get 'mypage'
+    end
+  end
+  
+  resources :relationships, only: [:create, :destroy]
+  
 end
