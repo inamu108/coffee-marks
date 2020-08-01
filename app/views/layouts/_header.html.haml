@@ -3,6 +3,10 @@
     .logo
       %h1
         = link_to image_tag("logo.png", alt: "coffee-marks"), root_path
+    .hamburger
+      %span
+      %span
+      %span
     %nav.global-nav
       %ul
         - if user_signed_in?

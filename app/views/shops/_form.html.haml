@@ -61,9 +61,9 @@
           必須
       .transportation
         = f.select :move, [["--"],["徒歩"],["車"]]
-        %span で
+        %span.means で
         = f.text_field :time, placeholder: "例）3"
-        %span 分くらい
+        %span.about 分くらい
     .field
       %p.title
         説明

@@ -12,7 +12,7 @@
               nickname
               %span.required
                 必須
-            .email
+            .nickname
               = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: ""
             .error
               = resource.errors.full_messages_for(:nickname)[0]
