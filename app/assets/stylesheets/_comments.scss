@@ -2,6 +2,9 @@ $main_color_font:rgba(0,0,0,0.87);
 
 .comment-submit {
   margin-top: 40px;
+  @include mq('sp') {
+    margin-top: 25px;
+  }
   .must {
     margin-bottom: 30px;
     font-size: 20px;
@@ -26,19 +29,34 @@ $main_color_font:rgba(0,0,0,0.87);
   }
 }
 .comment-show {
+  @include mq('sp') {
+    margin-top: 20px;
+  }
   .title {
     font-size: 24px;
+    @include mq('sp') {
+      font-size: 18px;
+    }
   }
   .comment-box {
     width: 600px;
     padding: 20px 0 5px 10px;
     border-bottom: 1px dotted rgb(94, 94, 94);
+    @include mq('sp') {
+      width: 100%;
+    }
     .username {
       font-weight: bold;
+      @include mq('sp') {
+        font-size: 14px;
+      }
     }
     .text {
       margin-top: 10px;
       line-height: 1.3;
+      @include mq('sp') {
+        font-size: 14px;
+      }
     }
   }
 }
