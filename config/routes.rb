@@ -8,8 +8,7 @@ Rails.application.routes.draw do
       get 'list'
       get 'search'
     end
-    post '/likes', to: 'likes#create'
-    delete '/likes', to: 'likes#destroy'
+    resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
   
