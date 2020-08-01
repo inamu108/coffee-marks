@@ -1,5 +1,5 @@
 .content{id: "like-#{shop.id}"}
-  - if Like.find_by(user_id: current_user.id, shop_id: shop.id)
+  - if shop.like_users.include?(current_user)
     .btn1
       = link_to shop_like_path(shop.id, current_user.id), method: :delete, class: "like-delete", remote: true do
         %i.fa-lg.fas.fa-heart.liked
