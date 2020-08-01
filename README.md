@@ -15,7 +15,7 @@
 フォロー機能  
 
 ## 使用技術(開発環境)
-Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery
+Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery、レスポンシブ対応
 
 ## 制作背景(意図)
 自分自身レトロな雰囲気の喫茶店やカフェなこともあり、ネットで探し休日に行きます。  
