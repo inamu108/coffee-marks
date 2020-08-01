@@ -26,11 +26,4 @@
               = shop.time
               分くらい
       .like
-        - if !shop.like_users.include?(current_user)
-          = link_to shop_likes_path(shop_id: shop.id), method: :post do
-            %i.fa-lg.fas.fa-heart.not-like
-        - else
-          = link_to shop_likes_path(shop_id: shop.id), method: :delete do
-            %i.fa-lg.fas.fa-heart.liked
-        %p.count
-          = shop.like_users.count
+        = render "likes/like", shop: shop

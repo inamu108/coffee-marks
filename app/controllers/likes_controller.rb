@@ -1,27 +1,19 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_shop, only: [:create, :destroy]
 
   def create
-    like = Like.new
-    like.user_id = current_user.id
-    like.shop_id = params[:shop_id]
-
-    if like.save
-      redirect_to root_path, success: 'お気に入りに登録しました！'
-    else
-      redirect_to root_path, danger: 'お気に入り登録に失敗しました。'
-    end
+    @like = Like.create(user_id: current_user.id, shop_id: @shop.id)
   end
 
   def destroy
-    like = Like.find_by(user_id: current_user.id, shop_id: params[:shop_id])
-    like.destroy if like.present?
+    @like = Like.find_by(user_id: current_user.id, shop_id: @shop.id)
+    @like.destroy
+  end
 
-    if like.destroyed?
-      redirect_to root_path, success: 'お気に入りを解除しました'
-    else
-      redirect_to root_path, success: 'お気に入り解除に失敗しました'
-    end
+  private
+  def set_shop
+    @shop = Shop.find(params[:shop_id])
   end
 
 end

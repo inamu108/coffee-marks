@@ -243,7 +243,7 @@ a:hover {
         .like {
           position: absolute;
           content: "";
-          bottom: 25px;
+          bottom: 40px;
           right: 0;
           a {
             padding: 7px;
@@ -255,8 +255,8 @@ a:hover {
             color: #ff4959;
           }
           .count {
-            margin-left: 14px;
-            font-size: 13px;
+            font-size: 14px;
+            color: $main_color_font;
           }
         }
       }

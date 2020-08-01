@@ -1,0 +1,13 @@
+.content{id: "like-#{shop.id}"}
+  - if Like.find_by(user_id: current_user.id, shop_id: shop.id)
+    .btn1
+      = link_to shop_like_path(shop.id, current_user.id), method: :delete, class: "like-delete", remote: true do
+        %i.fa-lg.fas.fa-heart.liked
+        %span.count
+          = shop.likes.length
+  - else
+    .btn2
+      = link_to shop_likes_path(shop.id), method: :post, class: "like-create", remote: true do
+        %i.fa-lg.fas.fa-heart.not-like
+        %span.count
+          = shop.likes.length
