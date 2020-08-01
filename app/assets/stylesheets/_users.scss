@@ -1,12 +1,10 @@
 .main {
-  width: 100%;
-  margin-top: 90px;
   .sign-area {
     max-width: 650px;
     margin: 0 auto;
     padding: 30px 0 70px;
     @include mq('sp') {
-      padding: 30px 20px 70px;
+      padding: 30px 20px;
     }
     section {
       padding: 30px 100px;
@@ -86,7 +84,7 @@
     margin: 0 auto;
     padding: 60px 0 70px;
     @include mq('sp') {
-      padding: 60px 20px 70px;
+      padding: 40px 20px;
     }
     section {
       .head02 {

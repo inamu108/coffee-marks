@@ -65,28 +65,129 @@ a:hover {
   padding: 20px;
   background-color: $main-background;
   border-bottom: 1px solid #ddd;
+  @include mq('sp') {
+    padding: 10px;
+  }
   .header-area {
     @include flex();
     align-items: center;
     justify-content: space-between;
     max-width: $layout-width-inner;
     margin: 0 auto;
+    @include mq('sp') {
+      display: block;
+    }
     .logo {
       h1 {
         width: 50px;
+        @include mq('sp') {
+          width: 30px;
+        }
+      }
+    }
+    .hamburger {
+      display: none;
+      @include mq('sp') {
+        display : block;
+        position: fixed;
+        z-index : 999;
+        top   : 5px;
+        right : 13px;
+        width : 42px;
+        height: 42px;
+        text-align: center;
+        cursor: pointer;
+      }
+      span {
+        @include mq('sp') {
+          display : block;
+          position: absolute;
+          width   : 30px;
+          height  : 2px ;
+          left    : 6px;
+          background : #555;
+          -webkit-transition: 0.3s ease-in-out;
+          -moz-transition   : 0.3s ease-in-out;
+          transition        : 0.3s ease-in-out;
+          &:nth-child(1) {
+            top: 10px;
+          }
+          &:nth-child(2) {
+            top: 20px;
+          }
+          &:nth-child(3) {
+            top: 30px;
+          }
+        }
+      }
+    }
+    .hamburger.active {
+      span {
+        @include mq('sp') {
+          &:nth-child(1) {
+            top : 16px;
+            left: 6px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform   : rotate(-45deg);
+            transform        : rotate(-45deg);
+          }
+          &:nth-child(2), &:nth-child(3) {
+            top: 16px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform   : rotate(45deg);
+            transform        : rotate(45deg);
+          }
+        }
+      }
+    }
+    .global-nav.active {
+      @include mq('sp') {
+        transform: translateX(0%);
       }
     }
     .global-nav {
+      @include mq('sp') {
+        position: fixed;
+        z-index : 2;
+        top  : 50px;
+        left : 0;
+        width: 100%;
+        background: #fff;
+        text-align: center;
+        transform: translateX(100%);
+        transition: all 0.6s;
+      }
       ul {
         @include flex();
         justify-content: space-between;
+        @include mq('sp') {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          padding: 0;
+          background: #ccc;
+        }
         li {
+          @include mq('sp') {
+            width: 100%;
+            padding: 0;
+            border-bottom: 1px solid #fff;
+            &:last-child {
+              border-bottom: none;
+            }
+            &:hover{
+              background :#ddd;
+            }
+          }
           a {
             display: block;
             position: relative;
             padding: 20px 20px 10px 20px;
             color: $main_color_font;
             transition: all .5s;
+            @include mq('sp') {
+              padding: 25px 30px;
+            }
             &:before {
               transition: all .5s;
             }
@@ -114,12 +215,22 @@ a:hover {
           margin-left: 20px;
           @include flex();
           align-items: center;
+          @include mq('sp') {
+            margin-left: 0;
+            padding: 25px 30px;
+          }
           .search-form {
+            @include mq('sp') {
+              margin: 0 auto;
+            }
             .search-input {
               width: 220px;
               padding: 10px 15px;
               border: 2px solid #ddd;
               border-radius: 4px;
+              @include mq('sp') {
+                width: 215px;
+              }
             }
             .search-btn {
               padding: 7px 12px;
@@ -159,6 +270,9 @@ a:hover {
 .main {
   width: 100%;
   margin-top: 90px;
+  @include mq('sp') {
+    margin-top: 50px;
+  }
   .main-visual {
     position: fixed;
     z-index: -1;
@@ -172,13 +286,16 @@ a:hover {
     position: absolute;
     top: 440px;
     background-color: $main-background;
+    @include mq('sp') {
+      top: 400px;
+    }
   }
   .main-area {
     max-width: 940px;
     margin: 0 auto;
     padding: 60px 0 70px;
     @include mq('sp') {
-      padding: 60px 20px 70px;
+      padding: 40px 20px;
     }
   }
   section {
@@ -353,7 +470,7 @@ a:hover {
   margin: 0 auto;
   padding: 30px 0 70px;
   @include mq('sp') {
-    padding: 30px 20px 70px;
+    padding: 30px 20px;
   }
   section {
     padding: 30px 100px;
@@ -484,7 +601,7 @@ a:hover {
   margin: 0 auto;
   padding: 40px 0 70px;
   @include mq('sp') {
-    padding: 40px 20px 70px;
+    padding: 40px 20px;
   }
   section {
     .head02 {
