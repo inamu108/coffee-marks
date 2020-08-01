@@ -97,6 +97,9 @@
       }
       .follow-form {
         margin-top: -12px;
+        @include mq('sp') {
+          margin-top: 30px;
+        }
         .move {
           display: block;
           padding: 7px;
@@ -254,7 +257,6 @@
               }
               .list {
                 position: relative;
-                padding: 15px 15px 15px 25px;
                 border: 2px solid #ddd;
                 background: #fff;
                 &:before {
@@ -269,9 +271,19 @@
                 &:nth-child(n+2) {
                   margin-top: 1px;
                 }
+                a {
+                  display: block;
+                  padding: 15px 15px 15px 25px;
+                  color: $main_color_font;
+                }
               }
             }
           }
+        }
+      }
+      .my-column.user {
+        @include mq('sp') {
+          margin-top: 30px;
         }
       }
     }
