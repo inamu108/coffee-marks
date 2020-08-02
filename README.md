@@ -23,10 +23,6 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery、レスポンシブ対
 このアプリを使用すれば、ユーザーが投稿した喫茶店やカフェを5段階の星の評価、良かったことなどの説明文を見ることで分かりやすく、探すことができます。
 また、投稿にコメント機能が付いているので実際に行ってみた感想もコメントすることができます。
 
-## 今後の実装予定の内容  
-・通知機能  
-
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -51,10 +47,9 @@ Ruby on Rails、Ruby、Haml、scss、JavaScript、jQuery、レスポンシブ対
 |image|string|null: false|
 |name|string|null: false|
 |evaluation|float|null: false|
-|prefecture_code|integer|null: false|
 |station|string|null: false|
 |move|string|null: false|
-|time|integer|null: false|
+|time|string|null: false|
 |description|text|
 |user|references|null: false, foreign_key: true|
 
