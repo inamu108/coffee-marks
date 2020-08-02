@@ -7,17 +7,6 @@
           必須
       .images
         = f.file_field :image
-        -# = f.file_field :image, :multiple => true
-        -# .post__drop__box__container
-        -#   .prev-content
-        -#   .label-content
-        -#     %label{for: "shop_images_attributes_0_image", class: "label-box", id: "label-box--0"}
-        -#       %pre.label-box__text-visible クリックしてファイルをアップロード
-        -#   .hidden-content
-        -#     = f.fields_for :images do |i|
-        -#       = i.file_field :image, type: "file", name: "shop[images_attributes][0][image]", class: "hidden-field", id: "shop_images_attributes_0_image"
-        -#       %input{class:"hidden-field", type: "file", name: "shop[images_attributes][1][image]", id: "shop_images_attributes_1_image" }
-        -#       %input{class:"hidden-field", type: "file", name: "shop[images_attributes][2][image]", id: "shop_images_attributes_2_image" }
     .field
       %p.title
         お店の名前
@@ -40,13 +29,6 @@
             scoreName: 'shop[evaluation]',
             half: true,
           });
-    .field
-      %p.title
-        都道府県
-        %span.required
-          必須
-      .prefecture
-        = f.collection_select :prefecture_code, Prefecture.all, :id, :name, prompt: "---"
     .field
       %p.title
         最寄駅
