@@ -1,6 +1,5 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, except: [:index, :search]
 
   def index
     @shops = Shop.includes(:user).limit(6).order('created_at DESC')
@@ -23,27 +22,51 @@ class ShopsController < ApplicationController
   end
 
   def show
+    if user_signed_in?
+    else
+      redirect_to new_user_session_path, alert: 'ログインして下さい'
+    end
     @comment = Comment.new
     @comments = @shop.comments.includes(:user)
   end
 
   def list
-    @shops = Shop.includes(:user).order('created_at DESC').page(params[:page]).per(9)
+    if user_signed_in?
+      @shops = Shop.includes(:user).order('created_at DESC').page(params[:page]).per(9)
+    else
+      redirect_to new_user_session_path, alert: 'ログインして下さい'
+    end
   end
 
   def search
-    @shops = Shop.search(params[:keyword]).order('created_at DESC').page(params[:page]).per(9)
+    if user_signed_in?
+      @shops = Shop.search(params[:keyword]).order('created_at DESC').page(params[:page]).per(9)
+    else
+      redirect_to new_user_session_path, alert: 'ログインして下さい'
+    end
   end
 
   def edit
+    if user_signed_in? && current_user.id == @shop.user_id
+    else
+      redirect_to new_user_session_path, alert: 'ログインして下さい'
+    end
   end
 
   def update
-    @shop.update(shop_params)
+    if user_signed_in? && current_user.id == @shop.user_id
+      @shop.update(shop_params)
+    else
+      redirect_to new_user_session_path, alert: 'ログインして下さい'
+    end
   end
 
   def destroy
-    @shop.destroy
+    if user_signed_in? && current_user.id == @shop.user_id
+      @shop.destroy
+    else
+      redirect_to new_user_session_path, alert: 'ログインして下さい'
+    end
   end
 
   private
@@ -54,12 +77,6 @@ class ShopsController < ApplicationController
 
   def set_shop
     @shop = Shop.find(params[:id])
-  end
-
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
   end
 
 end

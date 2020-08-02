@@ -17,7 +17,7 @@
         %ul.contents
           %li.content.show
             .my-like
-              - current_user.like_shops.each do |shop|
+              - @user.like_shops.each do |shop|
                 .my-like-col
                   = link_to shop_path(shop.id) do
                     %figure

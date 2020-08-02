@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :mypage]
   
   def show
+    if user_signed_in?
+    else
+      redirect_to new_user_session_path, alert: 'ログインして下さい'
+    end
   end
 
   def edit
@@ -19,6 +23,10 @@ class UsersController < ApplicationController
   end
 
   def mypage
+    if user_signed_in?
+    else
+      redirect_to new_user_session_path, alert: 'ログインして下さい'
+    end
   end
 
   private
