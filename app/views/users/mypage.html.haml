@@ -47,12 +47,14 @@
             .lists
               - @user.following.each do |user|
                 .list
-                  = user.nickname
+                  = link_to user_path(user) do
+                    = user.nickname
           %li.content.follower
             .lists
               - @user.follower.each do |user|
                 .list
-                  = user.nickname
+                  = link_to user_path(user) do
+                    = user.nickname
           %li.content.edit
             = link_to "ユーザー情報編集", edit_user_path(current_user)
 = render "./layouts/footer"

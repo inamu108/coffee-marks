@@ -277,17 +277,20 @@ a:hover {
     position: fixed;
     z-index: -1;
     img {
-      height: 350px;
+      height: 650px;
       object-fit: cover;
+      @include mq('sp') {
+        height: 350px;
+      }
     }
   }
   .main-wrap {
     width: 100%;
     position: absolute;
-    top: 440px;
+    top: 490px;
     background-color: $main-background;
     @include mq('sp') {
-      top: 400px;
+      top: 300px;
     }
   }
   .main-area {
