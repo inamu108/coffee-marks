@@ -14,8 +14,6 @@
                 必須
             .email
               = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: ""
-            -# .error
-            -#   = resource.errors.full_messages_for(:nickname)[0]
           .field
             %p.title
               email
@@ -23,20 +21,6 @@
                 必須
             .email
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example.com"
-            -# .error
-            -#   = resource.errors.full_messages_for(:email)[0]
-          -# .field
-          -#   %p.title
-          -#     password
-          -#     %span.required
-          -#       必須
-          -#   .password
-          -#     = f.password_field :password, autocomplete: "new-password", placeholder: "7文字の英数字の組み合わせ"
-          -# .field
-          -#   .password
-          -#     = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう1度入力して下さい"
-          -#   -# .error
-          -#   -#   = resource.errors.full_messages_for(:password)[0]
           .field
             %p.title
               name
@@ -45,10 +29,6 @@
             .name
               = f.text_field :family_name, autofocus: true, autocomplete: "family_name", placeholder: "例）田中"
               = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "例）太郎"
-            -# .error
-            -#   = resource.errors.full_messages_for(:family_name)[0]
-            -# .error
-            -#   = resource.errors.full_messages_for(:first_name)[0]
           .actions
             = f.submit "update"
 = render "./layouts/footer"

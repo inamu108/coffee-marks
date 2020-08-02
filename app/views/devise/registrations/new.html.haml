@@ -31,7 +31,7 @@
               %span.required
                 必須
             .password
-              = f.password_field :password, autocomplete: "new-password", placeholder: "7文字の英数字の組み合わせ"
+              = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上の英数字の組み合わせ"
           .field
             .password
               = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう1度入力して下さい"
@@ -51,5 +51,4 @@
               = resource.errors.full_messages_for(:first_name)[0]
           .actions
             = f.submit "Sign up"
-        -# = render "devise/shared/links"
 = render "./layouts/footer"

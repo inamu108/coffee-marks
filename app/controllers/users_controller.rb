@@ -1,16 +1,20 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :mypage]
+  before_action :set_user, only: [:show, :edit, :update, :mypage]
   
   def show
   end
 
   def edit
+    unless @user == current_user
+      redirect_to mypage_user_path(@user)
+    end
   end
 
   def update
     if current_user.update(user_params)
+       redirect_to mypage_user_path(current_user)
     else
-      render :edit
+      redirect_to edit_user_path(current_user)
     end
   end
 
