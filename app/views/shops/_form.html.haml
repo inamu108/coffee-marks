@@ -7,6 +7,9 @@
           必須
       .images
         = f.file_field :image
+    - if @shop.errors.any?
+      .shop-error
+        = @shop.errors.full_messages_for(:image)[0]
     .field
       %p.title
         お店の名前
@@ -14,6 +17,9 @@
           必須
       .name
         = f.text_field :name, placeholder: "喫茶店の名前"
+    - if @shop.errors.any?
+      .shop-error
+        = @shop.errors.full_messages_for(:name)[0]
     .field
       %p.title
         評価
@@ -29,6 +35,9 @@
             scoreName: 'shop[evaluation]',
             half: true,
           });
+    - if @shop.errors.any?
+      .shop-error
+        = @shop.errors.full_messages_for(:evaluation)[0]
     .field
       %p.title
         最寄駅
@@ -36,6 +45,9 @@
           必須
       .station
         = f.text_field :station, placeholder: "例）渋谷駅"
+    - if @shop.errors.any?
+      .shop-error
+        = @shop.errors.full_messages_for(:station)[0]
     .field
       %p.title
         移動手段
@@ -46,6 +58,12 @@
         %span.means で
         = f.text_field :time, placeholder: "例）3"
         %span.about 分くらい
+    - if @shop.errors.any?
+      .shop-error
+        = @shop.errors.full_messages_for(:move)[0]
+    - if @shop.errors.any?
+      .shop-error
+        = @shop.errors.full_messages_for(:time)[0]
     .field
       %p.title
         説明
