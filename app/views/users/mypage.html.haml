@@ -56,5 +56,9 @@
                   = link_to user_path(user) do
                     = user.nickname
           %li.content.edit
-            = link_to "ユーザー情報編集", edit_user_path(current_user)
+            - if @guest.id == current_user.id
+              %p
+                ゲストは編集できません。
+            - else
+              = link_to "ユーザー情報編集", edit_user_path(current_user)
 = render "./layouts/footer"

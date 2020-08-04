@@ -8,6 +8,8 @@
       .head02
         %h2
           Sign in
+      %p.guest
+        = link_to "Sign in as guest", users_guest_sign_in_path, method: :post
       .form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field

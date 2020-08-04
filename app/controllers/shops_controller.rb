@@ -9,7 +9,7 @@ class ShopsController < ApplicationController
     if user_signed_in?
       @shop = Shop.new
     else
-      redirect_to new_user_session_path, info: "ログインして下さい"
+      redirect_to new_user_session_path, alert: "ログインして下さい"
     end
   end
 
