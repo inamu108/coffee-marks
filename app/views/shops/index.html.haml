@@ -3,6 +3,9 @@
   .main-visual
     = image_tag 'main-visual.jpg'
   .main-wrap
+    - if flash[:notice]
+      %p.alert
+        = flash[:notice]
     .main-area
       %section
         .head02
