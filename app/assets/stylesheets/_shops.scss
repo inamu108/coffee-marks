@@ -686,6 +686,66 @@ a:hover {
     }
   }
 }
+.comment-submit {
+  margin-top: 40px;
+  @include mq('sp') {
+    margin-top: 25px;
+  }
+  .must {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  textarea {
+    width: 100%;
+    height: 80px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    line-height: 1.8;
+  }
+  input {
+    @include flex();
+    margin: 0 0 0 auto;
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    color: $main_color_font;
+    cursor: pointer;
+  }
+}
+.comment-show {
+  @include mq('sp') {
+    margin-top: 20px;
+  }
+  .title {
+    font-size: 24px;
+    @include mq('sp') {
+      font-size: 18px;
+    }
+  }
+  .comment-box {
+    width: 600px;
+    padding: 20px 0 5px 10px;
+    border-bottom: 1px dotted rgb(94, 94, 94);
+    @include mq('sp') {
+      width: 100%;
+    }
+    .username {
+      font-weight: bold;
+      @include mq('sp') {
+        font-size: 14px;
+      }
+    }
+    .text {
+      margin-top: 10px;
+      line-height: 1.3;
+      @include mq('sp') {
+        font-size: 14px;
+      }
+    }
+  }
+}
 
 /* list
 ----------------------------- */
