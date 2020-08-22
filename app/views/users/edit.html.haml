@@ -4,31 +4,31 @@
     %section
       .head02
         %h2
-          Sign up edit
+          ユーザー情報の編集
       .form
         = form_for(current_user) do |f|
           .field
             %p.title
-              nickname
+              ニックネーム
               %span.required
                 必須
             .email
               = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: ""
           .field
             %p.title
-              email
+              メールアドレス
               %span.required
                 必須
             .email
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example.com"
           .field
             %p.title
-              name
+              お名前
               %span.required
                 必須
             .name
               = f.text_field :family_name, autofocus: true, autocomplete: "family_name", placeholder: "例）田中"
               = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "例）太郎"
           .actions
-            = f.submit "update"
+            = f.submit "更新する"
 = render "./layouts/footer"

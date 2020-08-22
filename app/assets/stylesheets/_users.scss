@@ -14,7 +14,7 @@
       }
       .head02 {
         &:after {
-          left: 20%;
+          left: 30%;
           @include mq('sp') {
             left: 15%;
           }
@@ -33,26 +33,6 @@
           background: #575a5f;
           text-align: center;
           cursor: pointer;
-        }
-      }
-      .sign-in {
-        width: 100%;
-        a {
-          display: block;
-          width: 100px;
-          margin: 30px auto;
-          padding: 5px;
-          font-size: 14px;
-          color: #fff;
-          border: 2px solid #575a5f;
-          border-radius: 4px;
-          background: #575a5f;
-          text-align: center;
-          cursor: pointer;
-          &:hover {
-            opacity: .8;
-            transition-duration: .5s;
-          }
         }
       }
       .form {
@@ -131,7 +111,7 @@
     section {
       .head02 {
         &:after {
-          left: 35%;
+          left: 39.5%;
           @include mq('sp') {
             left: 17%;
           }

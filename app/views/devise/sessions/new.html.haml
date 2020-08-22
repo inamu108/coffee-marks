@@ -7,27 +7,25 @@
     %section
       .head02
         %h2
-          Sign in
+          ログイン
       %p.guest
-        = link_to "Sign in as guest", users_guest_sign_in_path, method: :post
+        = link_to "ゲストとしてログインする", users_guest_sign_in_path, method: :post
       .form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
             %p.title
-              email
+              メールアドレス
               %span.required
                 必須
             .email
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example.com"
           .field
             %p.title
-              password
+              パスワード
               %span.required
                 必須
             .password
               = f.password_field :password, autocomplete: "current-password", placeholder: "password"
           .actions
-            = f.submit "Sign in"
-      .sign-in
-        = link_to "Sign up", new_user_registration_path
+            = f.submit "ログイン"
 = render "./layouts/footer"
