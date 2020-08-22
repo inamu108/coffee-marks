@@ -182,9 +182,10 @@ a:hover {
           a {
             display: block;
             position: relative;
-            padding: 20px 20px 10px 20px;
+            padding: 20px 15px 10px 15px;
             color: $main_color_font;
             transition: all .5s;
+            font-size: 14px;
             @include mq('sp') {
               padding: 25px 30px;
             }
@@ -324,7 +325,7 @@ a:hover {
     .head02 {
       position: relative;
       font-family: $title_font;
-      font-size: 26px;
+      font-size: 22px;
       text-align: center;
       @include mq('sp') {
         font-size: 20px;
@@ -333,8 +334,8 @@ a:hover {
         position: absolute;
         content: "";
         bottom: -15px;
-        left: 35%;
-        width: 280px;
+        left: 39%;
+        width: 200px;
         height: 1px;
         background: #333;
         @include mq('sp') {
@@ -502,7 +503,7 @@ a:hover {
     }
     .head02 {
       &:after {
-        left: 20%;
+        left: 27%;
       }
     }
     .form {
@@ -633,7 +634,7 @@ a:hover {
   section {
     .head02 {
       &:after {
-        left: 34.5%;
+        left: 37.5%;
         @include mq('sp') {
           left: 21%;
         }

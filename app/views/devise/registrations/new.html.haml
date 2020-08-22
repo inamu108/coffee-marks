@@ -4,12 +4,12 @@
     %section
       .head02
         %h2
-          Sign up
+          新規登録
       .form
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           .field
             %p.title
-              nickname
+              ニックネーム
               %span.required
                 必須
             .nickname
@@ -18,7 +18,7 @@
               = resource.errors.full_messages_for(:nickname)[0]
           .field
             %p.title
-              email
+              メールアドレス
               %span.required
                 必須
             .email
@@ -27,7 +27,7 @@
               = resource.errors.full_messages_for(:email)[0]
           .field
             %p.title
-              password
+              パスワード
               %span.required
                 必須
             .password
@@ -39,7 +39,7 @@
               = resource.errors.full_messages_for(:password)[0]
           .field
             %p.title
-              name
+              お名前
               %span.required
                 必須
             .name
@@ -50,5 +50,5 @@
             .error
               = resource.errors.full_messages_for(:first_name)[0]
           .actions
-            = f.submit "Sign up"
+            = f.submit "新規登録"
 = render "./layouts/footer"

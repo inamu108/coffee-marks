@@ -4,7 +4,7 @@
     %section
       .head02
         %h2
-          Coffee shop detail
+          喫茶店の詳細
       .cafe-list
         %figure
           = image_tag @shop.image.url
@@ -45,14 +45,14 @@
           - if user_signed_in? && current_user.id == @shop.user_id
             .btn
               %p.edit-btn
-                = link_to "edit", edit_shop_path
+                = link_to "編集", edit_shop_path
               %p.destroy-btn
-                = link_to "delete", shop_path(@shop.id), method: :delete, data: {confirm: "本当に削除しますか？"}
+                = link_to "削除", shop_path(@shop.id), method: :delete, data: {confirm: "本当に削除しますか？"}
       .comment-submit
         - if current_user
           = form_with(model: [@shop, @comment], local: true, id: "new-comment") do |form|
-            = form.text_area :text, placeholder: "【コメント】  実際に行ってみましたが、本当にコーヒーが美味しかったです。また行きたいです。", rows: "2", class: "textbox"
-            = form.submit "comment", class: "form-submit"
+            = form.text_area :text, placeholder: "【例】  実際に行ってみましたが、本当にコーヒーが美味しかったです。また行きたいです。", rows: "2", class: "textbox"
+            = form.submit "コメントする", class: "form-submit"
         - else
           %p.must
             ※※ コメントの投稿には新規登録/ログインが必要です ※※
