@@ -64,7 +64,7 @@ a:hover {
   width: 100%;
   padding: 20px;
   background-color: $main-background;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
   @include mq('sp') {
     padding: 10px;
   }
@@ -185,7 +185,7 @@ a:hover {
             padding: 20px 15px 10px 15px;
             color: $main_color_font;
             transition: all .5s;
-            font-size: 14px;
+            font-size: 15px;
             @include mq('sp') {
               padding: 25px 30px;
             }
@@ -255,6 +255,7 @@ a:hover {
 .footer {
   width: 100%;
   padding: 40px 0;
+  border-top: 2px solid #ddd;
   .footer-area {
     max-width: 1260px;
     margin: 0 auto;
@@ -274,6 +275,22 @@ a:hover {
   @include mq('sp') {
     margin-top: 50px;
   }
+  .main-message {
+    position: relative;
+    max-width: 1260px;
+    margin: 0 auto;
+    p {
+      position: absolute;
+      content: "";
+      top: 60px;
+      left: 0;
+      padding: 60px;
+      font-size: 23px;
+      font-weight: bold;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
   .main-visual {
     position: fixed;
     z-index: -1;
@@ -288,7 +305,7 @@ a:hover {
   .main-wrap {
     width: 100%;
     position: absolute;
-    top: 490px;
+    top: 420px;
     background-color: $main-background;
     @include mq('sp') {
       top: 300px;
@@ -300,6 +317,7 @@ a:hover {
     margin: 0 auto;
     padding: 60px 0 70px;
     @include mq('sp') {
+      display: block;
       padding: 40px 20px;
     }
     .main-area {
@@ -308,9 +326,82 @@ a:hover {
       padding: 0;
     }
     .sidebar {
-      height: 100vh;
       width: 260px;
       margin-left: 80px;
+      padding: 20px;
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      @include mq('sp') {
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 0;
+      }
+      .user-box {
+        width: 100%;
+        margin-bottom: 30px;
+        .sentence {
+          margin: 15px 0;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+        a {
+          display: block;
+          width: 100px;
+          margin: 0 auto;
+          padding: 10px;
+          font-size: 14px;
+          color: #fff;
+          border: 2px solid #575a5f;
+          border-radius: 4px;
+          background: #575a5f;
+          text-align: center;
+          cursor: pointer;
+          &:hover {
+            opacity: .8;
+            transition-duration: .5s;
+          }
+        }
+      }
+      .title {
+        padding-bottom: 15px;
+        font-size: 18px;
+        border-bottom: 2px solid #d3d3d3;
+      }
+      .ranking {
+        margin-top: 35px;
+        .title {
+          padding-bottom: 15px;
+          font-size: 18px;
+          border-bottom: 2px solid #d3d3d3;
+        }
+        .rank-cafe {
+          @include flex();
+          align-items: center;
+          padding: 10px 0;
+          border-bottom: 1px solid #d3d3d3;
+          &:first-child {
+            margin-top: 0;
+          }
+          .count {
+            @include flex();
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #575a5f;
+            font-size: 13px;
+            color: #fff;
+            text-align: center;
+          }
+          .cafe-name, .user-name {
+            width: 150px;
+            margin-left: 10px;
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
   .main-area {

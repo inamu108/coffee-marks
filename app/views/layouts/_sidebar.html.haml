@@ -1,0 +1,32 @@
+.sidebar
+  - if !user_signed_in?
+    .user-box
+      %p.title
+        新規登録
+      %p.sentence
+        ログインすると、喫茶店を投稿したり、気になった喫茶店にいいねできるようになります。
+      = link_to "新規登録", new_user_registration_path
+  .ranking
+    %p.title
+      いいねランキング
+    - @ranking_likes.each.with_index(1) do |shop, i|
+      .rank-cafe
+        .count
+          = i
+        .cafe-name
+          = link_to shop_path(shop.id) do
+            = shop.name
+  .ranking
+    %p.title
+      投稿数ランキング
+    - @ranking_users.each.with_index(1) do |shop, i|
+      .rank-cafe
+        .count
+          = i
+        .user-name
+          - if user_signed_in? && shop.nickname == current_user.nickname
+            = link_to mypage_user_path(current_user.id) do
+              = shop.nickname
+          - else
+            = link_to user_path(shop.id) do
+              = shop.nickname

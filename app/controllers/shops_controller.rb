@@ -3,6 +3,8 @@ class ShopsController < ApplicationController
 
   def index
     @shops = Shop.includes(:user).limit(6).order('created_at DESC')
+    @ranking_likes = Shop.find(Like.group(:shop_id).order('count(shop_id) desc').limit(5).pluck(:shop_id))
+    @ranking_users = User.where(id: Shop.group(:user_id).order('count(user_id) desc').limit(5).pluck(:user_id))
   end
 
   def new
@@ -22,28 +24,16 @@ class ShopsController < ApplicationController
   end
 
   def show
-    if user_signed_in?
-    else
-      redirect_to new_user_session_path, alert: 'ログインして下さい'
-    end
     @comment = Comment.new
     @comments = @shop.comments.includes(:user)
   end
 
   def list
-    if user_signed_in?
-      @shops = Shop.includes(:user).order('created_at DESC').page(params[:page]).per(9)
-    else
-      redirect_to new_user_session_path, alert: 'ログインして下さい'
-    end
+    @shops = Shop.includes(:user).order('created_at DESC').page(params[:page]).per(9)
   end
 
   def search
-    if user_signed_in?
-      @shops = Shop.search(params[:keyword]).order('created_at DESC').page(params[:page]).per(9)
-    else
-      redirect_to new_user_session_path, alert: 'ログインして下さい'
-    end
+    @shops = Shop.search(params[:keyword]).order('created_at DESC').page(params[:page]).per(9)
   end
 
   def edit

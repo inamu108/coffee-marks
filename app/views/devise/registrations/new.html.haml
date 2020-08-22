@@ -5,6 +5,8 @@
       .head02
         %h2
           新規登録
+      %p.guest
+        = link_to "ゲストとしてログインする", users_guest_sign_in_path, method: :post
       .form
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           .field
