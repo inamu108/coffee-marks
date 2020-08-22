@@ -6,16 +6,18 @@
     - if flash[:notice]
       %p.alert
         = flash[:notice]
-    .main-area
-      %section
-        .head02
-          %h2
-            Latest coffee shops
-        = render "shop"
-        = link_to list_shops_path, class: "more" do
-          %p.point
-            %span.dot
-              …
-            %span.text
-              もっと見る
-    = render "./layouts/footer"
+    .top-area
+      .main-area
+        %section
+          .head02
+            %h2
+              Latest coffee shops
+          = render "shop"
+          = link_to list_shops_path, class: "more" do
+            %p.point
+              %span.dot
+                …
+              %span.text
+                もっと見る
+      = render "./layouts/sidebar"
+= render "./layouts/footer"

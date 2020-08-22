@@ -293,6 +293,25 @@ a:hover {
       top: 300px;
     }
   }
+  .top-area {
+    @include flex();
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 60px 0 70px;
+    @include mq('sp') {
+      padding: 40px 20px;
+    }
+    .main-area {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .sidebar {
+      height: 100vh;
+      width: 260px;
+      margin-left: 80px;
+    }
+  }
   .main-area {
     max-width: 940px;
     margin: 0 auto;
@@ -350,8 +369,8 @@ a:hover {
         a {
           display: block;
           figure {
-            width: 285px;
-            height: 176px;
+            width: 280px;
+            height: 173px;
             @include mq('sp') {
               width: 100%;
               height: 213px;
