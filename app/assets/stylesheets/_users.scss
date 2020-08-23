@@ -105,6 +105,9 @@
     max-width: 940px;
     margin: 0 auto;
     padding: 60px 0 70px;
+    @include mq('tab') {
+      padding: 60px 20px 70px;
+    }
     @include mq('sp') {
       padding: 40px 20px;
     }
@@ -112,8 +115,11 @@
       .head02 {
         &:after {
           left: 39.5%;
-          @include mq('sp') {
-            left: 17%;
+          @include mq('tab') {
+            left: 36.5%;
+            @include mq('sp') {
+              left: 17%;
+            }
           }
         }
       }
@@ -126,17 +132,31 @@
           display: block;
           padding: 7px;
           border: 2px solid #ddd;
+          border-radius: 4px;
           background: #fff;
           color: $main_color_font;
           cursor: pointer;
+          &:hover {
+            background: #575a5f;
+            color: #fff;
+            opacity: .8;
+            transition-duration: .6s;
+          }
         }
         .remove {
           display: block;
           padding: 7px;
           border: 2px solid #ddd;
+          border-radius: 4px;
           background: #575a5f;
           color: #fff;
           cursor: pointer;
+          &:hover {
+            background: #fff;
+            color: $main_color_font;
+            opacity: .8;
+            transition-duration: .6s;
+          }
         }
       }
       .my-column {
@@ -235,9 +255,17 @@
                 figure {
                   width: 220px;
                   height: 136px;
-                  @include mq('sp') {
-                    width: 100%;
-                    height: 213px;
+                  @include mq('tab') {
+                    width: 210px;
+                    height: 130px;
+                    @include mq('tab') {
+                      width: 167px;
+                      height: 103px;
+                      @include mq('sp') {
+                        width: 100%;
+                        height: 213px;
+                      }
+                    }
                   }
                   img {
                     height: 100%;
@@ -284,16 +312,19 @@
                 padding-top: 0;
               }
               .list {
+                @include flex();
+                align-items: center;
                 position: relative;
+                width: 280px;
                 border: 2px solid #ddd;
                 background: #fff;
                 &:before {
                   position: absolute;
                   content: "";
-                  width: 4px;
-                  height: 4px;
+                  width: 5px;
+                  height: 5px;
                   background: #333;
-                  top: 48%;
+                  border-radius: 50%;
                   left: 11px;
                 }
                 &:nth-child(n+2) {
@@ -301,8 +332,15 @@
                 }
                 a {
                   display: block;
+                  width: 280px;
                   padding: 15px 15px 15px 25px;
                   color: $main_color_font;
+                  &:hover {
+                    background: #575a5f;
+                    color: #fff;
+                    opacity: .8;
+                    transition-duration: .6s;
+                  }
                 }
               }
             }
