@@ -27,5 +27,5 @@
           = link_to "ブログ", "https://inamublog.com/", target: :_blank
         %li.search
           = form_with(url: search_shops_path, local: true, method: :get, class: "search-form") do |f|
-            = f.text_field :keyword, placeholder: "投稿をキーワードで検索する", class: "search-input"
+            = f.text_field :keyword, placeholder: "キーワードで検索する", class: "search-input"
             = f.submit "検索", class: "search-btn"
