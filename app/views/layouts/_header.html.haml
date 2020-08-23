@@ -2,7 +2,11 @@
   .header-area
     .logo
       %h1
-        = link_to image_tag("logo.png", alt: "coffee-marks"), root_path
+        = link_to root_path do
+          %p.main-title
+            Coffee Marks
+          %p.sub-title
+            喫茶店情報サイト
     .hamburger
       %span
       %span

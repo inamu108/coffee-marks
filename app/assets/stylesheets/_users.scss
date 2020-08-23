@@ -204,6 +204,12 @@
               background: #fff;
               font-size: 13px;
               color: $main_color_font;
+              &:hover {
+                background: #575a5f;
+                color: #fff;
+                opacity: .8;
+                transition-duration: .6s;
+              }
             }
           }
           .my-like {

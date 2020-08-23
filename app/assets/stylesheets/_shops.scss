@@ -79,9 +79,17 @@ a:hover {
     }
     .logo {
       h1 {
-        width: 50px;
-        @include mq('sp') {
-          width: 30px;
+        a {
+          color: $main_color_font;
+          .main-title {
+            font-size: 24px;
+          }
+          .sub-title {
+            margin-top: 1px;
+            font-size: 12px;
+            font-weight: normal;
+            text-align: center;
+          }
         }
       }
     }
@@ -486,6 +494,12 @@ a:hover {
                   height: 14px;
                 }
               }
+              .evaluation-count {
+                margin-left: 10px;
+                color: #e60000;
+                font-size: 18px;
+                font-weight: bold;
+              }
             }
             .cafe-station {
               margin-top: 15px;
@@ -499,7 +513,7 @@ a:hover {
         .like {
           position: absolute;
           content: "";
-          bottom: 40px;
+          bottom: 10px;
           right: 0;
           a {
             padding: 7px;
@@ -768,6 +782,12 @@ a:hover {
           height: 14px;
         }
       }
+      .evaluation-count {
+        margin-left: 15px;
+        color: #e60000;
+        font-size: 18px;
+        font-weight: bold;
+      }
     }
     .cafe-station {
       margin-top: 15px;
@@ -823,6 +843,12 @@ a:hover {
     background: #fff;
     color: $main_color_font;
     cursor: pointer;
+    &:hover {
+      background: #575a5f;
+      color: #fff;
+      opacity: .8;
+      transition-duration: .6s;
+    }
   }
 }
 .comment-show {
@@ -904,6 +930,12 @@ a:hover {
     background: #fff;
     font-size: 13px;
     color: $main_color_font;
+    &:hover {
+      background: #575a5f;
+      color: #fff;
+      opacity: .8;
+      transition-duration: .6s;
+    }
   }
   .destroy-btn {
     margin-left: 10px;
@@ -931,6 +963,12 @@ a:hover {
       background: #fff;
       font-size: 13px;
       color: $main_color_font;
+      &:hover {
+        background: #575a5f;
+        color: #fff;
+        opacity: .8;
+        transition-duration: .6s;
+      }
     }
   }
 }
