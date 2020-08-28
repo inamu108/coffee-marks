@@ -845,6 +845,10 @@ a:hover {
     }
     .cafe-name {
       @include flex();
+      .cafe {
+        font-size: 17px;
+        font-weight: bold;
+      }
       .cafe-evaluation {
         @include flex();
         margin-left: 15px;
@@ -862,6 +866,8 @@ a:hover {
     }
     .cafe-station {
       margin-top: 15px;
+      border-bottom: 2px solid #d3d3d3;
+      padding-bottom: 15px;
       @include mq('sp') {
         font-size: 14px;
       }
@@ -870,7 +876,8 @@ a:hover {
       margin-left: 13px;
     }
     .description {
-      margin-top: 25px;
+      margin-top: 10px;
+      font-size: 15px;
       line-height: 1.8;
       @include mq('sp') {
         font-size: 14px;
