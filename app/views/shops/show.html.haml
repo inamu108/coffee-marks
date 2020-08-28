@@ -10,7 +10,7 @@
           = image_tag @shop.image.url
         .cafe-individual
           .cafe-name
-            %p= @shop.name
+            %p.cafe= @shop.name
             %p.cafe-evaluation{ id: "star-evaluation-#{@shop.id}" }
               :javascript
                 $('#star-evaluation-#{@shop.id}').raty({
