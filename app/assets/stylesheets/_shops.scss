@@ -292,15 +292,40 @@ a:hover {
       list-style: none;
       li {
         &:first-child {
-          padding: 5px 20px 5px 0;
+          padding: 0 20px 0 0;
         }
         &:nth-child(n+2) {
-          padding: 5px 20px;
+          padding: 0 20px;
           border-left: 2px solid #d3d3d3;
         }
         a {
-          font-size: 14px;
+          display: block;
+          position: relative;
+          padding: 7px 0;
           color: $main_color_font;
+          transition: all .5s;
+          font-size: 14px;
+          &:before {
+            transition: all .5s;
+          }
+          &:after {
+            position: absolute;
+            content: '.';
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0%;
+            height: 1px;
+            margin: auto;
+            color: transparent;
+            background: $main_color_font;
+            transition: all .5s;
+          }
+          &:hover {
+            &:after {
+              width: 100%;
+            }
+          }
         }
       }
     }
