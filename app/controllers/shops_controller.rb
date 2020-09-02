@@ -25,7 +25,7 @@ class ShopsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @shop.comments.includes(:user)
+    @comments = @shop.comments.includes(:user).order('created_at DESC')
   end
 
   def list
